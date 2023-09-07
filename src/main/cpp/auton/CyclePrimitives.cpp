@@ -113,7 +113,8 @@ void CyclePrimitives::RunDoNothing()
 	if (m_doNothing == nullptr)
 	{	
 		BallManipulator::BALL_MANIPULATOR_STATE state = BallManipulator::BALL_MANIPULATOR_STATE::HOLD;
-		auto time = DriverStation::GetInstance().GetMatchTime();
+		//auto time = DriverStation::GetInstance().GetMatchTime();
+		auto time = DriverStation::GetMatchTime();
 		auto params = new PrimitiveParams( DO_NOTHING,          // identifier
 		                                   time,              	// time
 		                                   0.0,                 // distance

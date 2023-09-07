@@ -33,6 +33,14 @@ deploy {
     }
 }
 
+//included form old 2020 code
+
+// Set this to true to include the src folder in the include directories passed
+// to the compiler. Some eclipse project imports depend on this behavior
+// We recommend leaving this disabled if possible. Note for eclipse project
+// imports this is enabled by default. For new projects, its disabled.
+def includeSrcInIncludeRoot = true
+
 def deployArtifact = deploy.targets.roborio.artifacts.frcCpp
 
 // Set this to true to enable desktop support.
@@ -69,6 +77,9 @@ model {
                     include "**/*.h"
                     include "**/*.hpp"
                     include "**/*.hxx"
+                    if (includeSrcInIncludeRoot) {
+                        srcDir 'src/main/cpp'
+                    }
                 }
             }
 
