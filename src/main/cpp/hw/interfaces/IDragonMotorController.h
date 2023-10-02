@@ -30,6 +30,7 @@
 
 // Third Party Includes
 #include <ctre/phoenix/motorcontrol/RemoteSensorSource.h>
+#include <ctre/phoenix/motorcontrol/can/WPI_TalonFX.h>
 
 /// @interface IDragonMotorController
 /// @brief The general interface to motor controllers so that the specific mechanisms that use motors,

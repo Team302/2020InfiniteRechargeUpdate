@@ -21,7 +21,7 @@
 
 // FRC includes
 #include <frc/PowerDistribution.h>
-#include <frc/SpeedController.h>
+#include <frc/motorcontrol/MotorController.h>
 
 // Team 302 includes
 #include <hw/DragonFalcon.h>

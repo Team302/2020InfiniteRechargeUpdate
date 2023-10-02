@@ -18,7 +18,7 @@
 #pragma once
 
 // C++ Includes
-
+#include <vector>
 // FRC includes
 #include <frc/GenericHID.h>
 #include <frc/Joystick.h>

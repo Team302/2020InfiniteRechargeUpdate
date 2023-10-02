@@ -5,7 +5,7 @@
  *      Author: team302
  */
 
-#include <ctre/phoenix/Sensors/PigeonIMU.h>
+#include <ctre/phoenix/sensors/PigeonIMU.h>
 #include <hw/DragonPigeon.h>
 #include <memory>
 

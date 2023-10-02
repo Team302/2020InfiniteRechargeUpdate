@@ -8,7 +8,7 @@
 #pragma once
 
 #include <memory>
-#include <ctre/phoenix/Sensors/PigeonIMU.h>
+#include <ctre/phoenix/sensors/PigeonIMU.h>
 
 
 class DragonPigeon
