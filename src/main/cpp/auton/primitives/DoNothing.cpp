@@ -80,5 +80,5 @@ void DoNothing::Run()
 /// @return bool true means the end condition was reached, false means it hasn't
 bool DoNothing::IsDone() 
 {
-	return m_timer->HasPeriodPassed( m_maxTime );
+	return m_timer->HasElapsed( m_maxTime );
 }
