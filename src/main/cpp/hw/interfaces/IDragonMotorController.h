@@ -30,7 +30,8 @@
 
 // Third Party Includes
 #include <ctre/phoenix/motorcontrol/RemoteSensorSource.h>
-#include <ctre/phoenix/motorcontrol/can/WPI_TalonFX.h>
+
+//#include <ctre/phoenix/motorcontrol/can/WPI_TalonFX.h>
 
 /// @interface IDragonMotorController
 /// @brief The general interface to motor controllers so that the specific mechanisms that use motors,
@@ -61,7 +62,7 @@ class IDragonMotorController
 
         /// @brief  Return the speedcontroller 
         /// @return std::shared_ptr<frc::SpeedControll> - pointer to the speed controller object
-        virtual std::shared_ptr<frc::SpeedController> GetSpeedController() const = 0;
+        virtual std::shared_ptr<frc::MotorController> GetSpeedController() const = 0;
 
         // Setters
         virtual void SetControlMode(ControlModes::CONTROL_TYPE mode) = 0;
