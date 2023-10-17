@@ -25,7 +25,6 @@
 
 // Team 302 includes
 #include <hw/DragonFalcon.h>
-#include <hw/DragonPDP.h>
 #include <hw/usages/MotorControllerUsage.h>
 #include <utils/Logger.h>
 #include <utils/ConversionUtils.h>
@@ -85,8 +84,10 @@ shared_ptr<SpeedController> DragonFalcon::GetSpeedController() const
 
 double DragonFalcon::GetCurrent() const
 {
-	PowerDistributionPanel* pdp = DragonPDP::GetInstance()->GetPDP();
-    return ( pdp != nullptr ) ? pdp->GetCurrent( m_pdp ) : 0.0;
+	
+	/*PowerDistributionPanel* pdp = DragonPDP::GetInstance()->GetPDP();
+    return ( pdp != nullptr ) ? pdp->GetCurrent( m_pdp ) : 0.0;*/
+	return 0;
 }
 
 

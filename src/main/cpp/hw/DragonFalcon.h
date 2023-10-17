@@ -28,7 +28,6 @@
 
 // Team 302 includes
 #include <hw/DragonFalcon.h>
-#include <hw/DragonPDP.h>
 #include <hw/usages/MotorControllerUsage.h>
 #include <hw/interfaces/IDragonMotorController.h>
 #include <utils/Logger.h>
