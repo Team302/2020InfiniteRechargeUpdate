@@ -61,8 +61,12 @@ DragonLidar::DragonLidar
 ///-----------------------------------------------------------------------
 double DragonLidar::GetDistance() const
 { 
+
 	m_trigger->Set(false);
-	return m_pulseWidthCounter->GetPeriod() * 100000.0 * 0.393701; //Converting from period to centimeters, and then to inches
+    double m_conversion;
+    m_conversion =  m_pulseWidthCounter->GetPeriod() to.<double>();
+    m_conversion *= 100000.0 * 0.393701; //Converting from period to centimeters, and then to inches
+	return
 }
 
 

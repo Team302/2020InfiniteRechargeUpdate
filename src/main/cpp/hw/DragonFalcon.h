@@ -61,7 +61,7 @@ class DragonFalcon : public IDragonMotorController
         double GetRPS() const override;
         MotorControllerUsage::MOTOR_CONTROLLER_USAGE GetType() const override;
         int GetID() const override;
-        std::shared_ptr<frc::SpeedController> GetSpeedController() const override;
+        std::shared_ptr<frc::MotorController> GetSpeedController() const override;
         double GetCurrent() const override;
 
         // Setters (override)

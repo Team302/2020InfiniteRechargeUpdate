@@ -1,8 +1,8 @@
 #include <hw/DragonTalon.h>
-#include <hw/DragonPDP.h>
+//#include <hw/DragonPDP.h>
 #include <hw/usages/MotorControllerUsage.h>
 #include <frc/PowerDistribution.h>
-#include <frc/SpeedController.h>
+#include <frc/motorcontrol/MotorController.h>
 #include <memory>
 #include <ctre/phoenix/motorcontrol/LimitSwitchType.h>
 #include <utils/ConversionUtils.h>
@@ -52,15 +52,16 @@ void DragonTalon::SetControlMode(ControlModes::CONTROL_TYPE mode)
 	m_controlMode = mode;
 }
 
-shared_ptr<SpeedController> DragonTalon::GetSpeedController() const
+shared_ptr<MotorController> DragonTalon::GetSpeedController() const
 {
 	return m_talon;
 }
 
 double DragonTalon::GetCurrent() const
 {
-	PowerDistributionPanel* pdp = DragonPDP::GetInstance()->GetPDP();
-    return ( pdp != nullptr ) ? pdp->GetCurrent( m_pdp ) : 0.0;
+	/*PowerDistributionPanel* pdp = DragonPDP::GetInstance()->GetPDP();
+    return ( pdp != nullptr ) ? pdp->GetCurrent( m_pdp ) : 0.0;*/
+	return 0;
 }
 
 
