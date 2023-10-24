@@ -1,4 +1,3 @@
-
 //====================================================================================================================================================
 // Copyright 2020 Lake Orion Robotics FIRST Team 302
 //
@@ -42,7 +41,7 @@
 //#include <states/climber/ClimberStateMgr.h>
 #include <states/intake/IntakeStateMgr.h>
 #include <frc/Solenoid.h>
-#include <hw/DragonLimelight.h>
+//#include <hw/DragonLimelight.h>
 #include <test/ButtonBoxDisplay.h>
 #include <test/XboxDisplay.h>
 #include <test/IntakeStateMgrTest.h>
@@ -52,7 +51,7 @@
 #include <ctre/Phoenix.h>
 #include <gamepad/TeleopControl.h>
 #include <subsys/IMechanism.h>
-#include <hw/factories/LimelightFactory.h>
+//#include <hw/factories/LimelightFactory.h>
 #include <subsys/ChassisFactory.h>
 #include <subsys/IChassis.h>
 #include <states/hookdelivery/HookDeliveryStateMgr.h>
@@ -102,7 +101,7 @@ class Robot : public frc::TimedRobot
       TeleopControl* m_controller;
       IMechanism* m_impeller;
       IMechanism* m_shooter;
-      std::shared_ptr<DragonLimelight> m_limelight;
+      //std::shared_ptr<DragonLimelight> m_limelight;
       TalonFX* m_leftMaster;
       TalonFX* m_leftSlave;
       TalonFX* m_rightMaster;

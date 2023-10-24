@@ -53,22 +53,9 @@ bool DragonSolenoid::Get() const
     }
     return val;
 }
-bool DragonSolenoid::IsBlackListed() const
-{
-    bool val = false;
-    if ( m_solenoid != nullptr )
-    {
-        val = m_solenoid->IsBlackListed();
-    }
-    else
-    {
-        Logger::GetLogger()->LogError( string("DragonSolenoid::IsBlackListed"), string("solenoid ptr is nullptr"));
-    }
-    return val;
-}
 void DragonSolenoid::SetPulseDuration
 (
-    double durationSeconds
+    units::second_t durationSeconds
 )
 {
     if ( m_solenoid != nullptr )

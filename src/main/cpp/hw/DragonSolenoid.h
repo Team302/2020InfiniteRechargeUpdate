@@ -27,10 +27,9 @@ class DragonSolenoid
             bool on
         );
         bool Get() const;
-        bool IsBlackListed() const;
         void SetPulseDuration
         (
-            double durationSeconds
+            units::second_t durationSeconds
         );
         void StartPulse();
 

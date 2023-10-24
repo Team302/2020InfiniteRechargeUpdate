@@ -12,13 +12,13 @@
 #include <xmlhw/MotorDefn.h>
 #include <hw/DragonTalon.h>
 #include <hw/DragonFalcon.h>
-#include <hw/DragonSparkMax.h>
+//#include <hw/DragonSparkMax.h>
 #include <utils/Logger.h>
 
 #include <ctre/phoenix/motorcontrol/can/TalonSRX.h>
 #include <ctre/phoenix/motorcontrol/can/TalonFX.h>
 #include <ctre/phoenix/motorcontrol/FeedbackDevice.h>
-#include <rev/CANSparkMax.h>
+//#include <rev/CANSparkMax.h>
 
 using namespace std;
 using namespace ctre::phoenix::motorcontrol;
@@ -134,7 +134,7 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
         }
         controller.reset( talon );
     }
-    else if ( type == MOTOR_TYPE::BRUSHED_SPARK_MAX || type == MOTOR_TYPE::BRUSHLESS_SPARK_MAX )
+    /*else if ( type == MOTOR_TYPE::BRUSHED_SPARK_MAX || type == MOTOR_TYPE::BRUSHLESS_SPARK_MAX )
     {
         auto brushedBrushless = (type == MOTOR_TYPE::BRUSHED_SPARK_MAX) ? rev::CANSparkMax::MotorType::kBrushed : rev::CANSparkMax::MotorType::kBrushless;
         auto smax = new DragonSparkMax( canID, pdpID, MotorControllerUsage::GetInstance()->GetUsage(usage), brushedBrushless, gearRatio );
@@ -162,7 +162,7 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
             }
         }
         controller.reset( smax );
-    }
+    }*/
     else
     {
         hasError = true;

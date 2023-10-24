@@ -53,7 +53,8 @@ DragonUltrasonicPWM::DragonUltrasonicPWM
 ///-----------------------------------------------------------------------
 double DragonUltrasonicPWM::GetDistance() const 
 {
-	return m_pulseWidthCounter->GetPeriod() * 100000.0 * 0.393701;
+	double m_conversion = m_pulseWidthCounter->GetPeriod().to<double>();
+	return m_conversion * 100000.0 * 0.393701;
 }
 
 
