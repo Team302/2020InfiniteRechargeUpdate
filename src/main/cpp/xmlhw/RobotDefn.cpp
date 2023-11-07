@@ -33,7 +33,8 @@
 // C++ Includes
 #include <iostream>
 #include <memory>
-
+#include <cstring>
+#include <string.h>
 // FRC includes
 
 // Team 302 includes
@@ -42,8 +43,8 @@
 #include <xmlhw/FeedbackDefn.h>
 #include <xmlhw/RobotDefn.h>
 #include <xmlhw/MechanismDefn.h>
-#include <xmlhw/LimelightDefn.h>
-#include <xmlhw/PDPDefn.h>
+//#include <xmlhw/LimelightDefn.h>
+//#include <xmlhw/PDPDefn.h>
 #include <xmlhw/PigeonDefn.h>
 #include <hw/DragonPigeon.h>
 #include <utils/Logger.h>
@@ -76,9 +77,9 @@ void RobotDefn::ParseXML()
         unique_ptr<CameraDefn> cameraXML = make_unique<CameraDefn>();
         unique_ptr<ChassisDefn> chassisXML = make_unique<ChassisDefn>();
         unique_ptr<MechanismDefn> mechanismXML = make_unique<MechanismDefn>();
-        unique_ptr<PDPDefn> pdpXML = make_unique<PDPDefn>();
+        //unique_ptr<PDPDefn> pdpXML = make_unique<PDPDefn>();
         unique_ptr<PigeonDefn> pigeonXML = make_unique<PigeonDefn>();
-        unique_ptr<LimelightDefn> limelightXML = make_unique<LimelightDefn>();
+        //unique_ptr<LimelightDefn> limelightXML = make_unique<LimelightDefn>();
         unique_ptr<FeedbackDefn> feedbackXML = make_unique<FeedbackDefn>();
 
         // get the root node <robot>
@@ -99,10 +100,6 @@ void RobotDefn::ParseXML()
                 else if (strcmp(child.name(), "camera") == 0)
                 {
                     cameraXML.get()->ParseXML(child);
-                }
-                else if (strcmp(child.name(), "pdp") == 0)
-                {
-                    pdpXML.get()->ParseXML(child);
                 }
                 else if ( strcmp(child.name(), "odometry") == 0 )
                 {

@@ -29,8 +29,8 @@ class ControlPanel : public IMechanism
         ControlPanel
         (
             std::shared_ptr<IDragonMotorController>             motorcontroller,
-            std::shared_ptr<DragonSolenoid>                     solenoid,
-            rev::ColorSensorV3*                                 colorSensor
+            std::shared_ptr<DragonSolenoid>                     solenoid
+            //rev::ColorSensorV3*                                 colorSensor
         );
         ControlPanel() = delete;
 

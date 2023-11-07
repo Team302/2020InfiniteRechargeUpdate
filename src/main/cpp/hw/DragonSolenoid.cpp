@@ -18,7 +18,7 @@ DragonSolenoid::DragonSolenoid
 	int  channel,
     bool reversed
 ) : m_type( usage ),
-    m_solenoid( make_shared<Solenoid>( pcmID, channel ) ),
+    m_solenoid( make_shared<Solenoid>( frc::PneumaticsModuleType::CTREPCM,pcmID, channel ) ),
     m_reversed( reversed )
 
 {

@@ -215,7 +215,7 @@ IMechanism*  MechanismFactory::CreateIMechanism
 						if ( colorSensor !=nullptr )
 						{
 							//todo color sensor pointer needs to be added to the constructor
-							auto controlPanel = new ControlPanel( motor, solenoid, colorSensor );
+							auto controlPanel = new ControlPanel( motor, solenoid );
 							subsys = dynamic_cast<IMechanism*>(controlPanel);
 						}
 					}

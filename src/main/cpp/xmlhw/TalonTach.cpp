@@ -1,5 +1,6 @@
 // c++ Includes 
 #include <iostream>
+#include <cstring>
 
 //FRC includes
 #include <frc/SmartDashboard/SmartDashboard.h>

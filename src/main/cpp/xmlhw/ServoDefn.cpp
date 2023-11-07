@@ -5,6 +5,7 @@
 // C++ Includes
 #include <memory>
 #include <iostream>
+#include <cstring>
 
 // FRC includes
 

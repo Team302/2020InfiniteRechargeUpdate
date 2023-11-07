@@ -23,6 +23,7 @@
 // C++ includes
 #include <memory>
 #include <string>
+#include <cstring>
 
 // FRC includes
 #include <frc/AnalogInput.h>

@@ -23,28 +23,27 @@
 #include <subsys/ControlPanel.h>
 
 #include <frc/util/color.h>
-#include <rev/ColorMatch.h>
-#include <rev/ColorSensorV3.h>
+//#include <rev/ColorMatch.h>
+//#include <rev/ColorSensorV3.h>
 
 #include <hw/interfaces/IDragonMotorController.h>
 #include <frc/smartdashboard/SmartDashboard.h>
 #include <utils/logger.h>
-#include <rev/ColorSensorV3.h>
 
 using namespace std;
 using namespace frc;
-using namespace rev;
+//using namespace rev;
 
 ControlPanel::ControlPanel
 (
     std::shared_ptr<IDragonMotorController>     motorController,
-    std::shared_ptr<DragonSolenoid>             solenoid,
-    ColorSensorV3*                              colorSensor
-) : IMechanism(), 
+    std::shared_ptr<DragonSolenoid>             solenoid
+    //ColorSensorV3*                              colorSensor
+)    : IMechanism(), 
     m_spinner ( motorController ),
-    m_manipulatorExtender (solenoid),
-    m_color( colorSensor ),
-    m_colorMatcher( new ColorMatch())
+    m_manipulatorExtender (solenoid)
+    //m_color( colorSensor ),
+    //m_colorMatcher( new ColorMatch())
 {
     if (m_spinner.get() == nullptr )
     {
@@ -55,10 +54,10 @@ ControlPanel::ControlPanel
     {
         Logger::GetLogger()->LogError( string( "Intake constructor" ), string( "solenoid is nullptr" ) );
     }
-    m_colorMatcher->AddColorMatch(kBlueTarget);
+    /*m_colorMatcher->AddColorMatch(kBlueTarget);
     m_colorMatcher->AddColorMatch(kGreenTarget);
     m_colorMatcher->AddColorMatch(kRedTarget);
-    m_colorMatcher->AddColorMatch(kYellowTarget);
+    m_colorMatcher->AddColorMatch(kYellowTarget);*/
 }
 
 //ControlPanel::~ControlPanel)()
@@ -160,7 +159,7 @@ void ControlPanel::SetControlConstants
 
 ControlPanelColors::COLOR ControlPanel::GetColorSeen()
 {
-    frc::Color detectedColor = m_color->GetColor();
+    /*frc::Color detectedColor = m_color->GetColor();
     uint32_t detectedProximity = m_color->GetProximity();
     std::string colorString;
     double confidence = 0.0;
@@ -181,5 +180,5 @@ ControlPanelColors::COLOR ControlPanel::GetColorSeen()
     {
         return ControlPanelColors::COLOR::RED;
     }
-    return ControlPanelColors::COLOR::UNKNOWN;
+    return ControlPanelColors::COLOR::UNKNOWN;*/
 }

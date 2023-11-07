@@ -50,7 +50,6 @@
 #include <subsys/ChassisFactory.h>
 #include <subsys/IChassis.h>
 #include <hw/factories/PigeonFactory.h>
-#include <frc/Solenoid.h>
 #include <states/hookdelivery/HookDeliveryStateMgr.h>
 
 using namespace std;
@@ -80,35 +79,6 @@ void Robot::RobotInit()
     m_hook = HookDeliveryStateMgr::GetInstance();
     m_winch = ClimberStateMgr::GetInstance();
 
-    /*m_leftMaster = new TalonFX(12);
-    m_leftSlave = new TalonFX(13);
-    m_rightMaster = new TalonFX(15);
-    m_rightSlave = new TalonFX(14);
-
-    m_leftMaster->ConfigFactoryDefault();
-    m_leftSlave->ConfigFactoryDefault();
-    m_rightMaster->ConfigFactoryDefault();
-    m_rightSlave->ConfigFactoryDefault();
-
-    m_leftSlave->SetInverted(false);
-    m_leftMaster->SetInverted(false);
-    m_rightMaster->SetInverted(true);
-    m_rightSlave->SetInverted(true);
-
-    m_leftSlave->Set(ControlMode::Follower, 12);
-    m_rightSlave->Set(ControlMode::Follower, 15);*/
-
-    //m_intake = new IntakeStateMgr();
-
-    //m_cpm = new TalonSRX( 6 );
-    //m_climber = new TalonSRX( 2 );
-
-  
-    //m_cpmSolenoid = new frc::Solenoid( 9, 6);
-    //m_climberSolenoid = new frc::Solenoid( 9, 5 );
-
-   // m_cpm = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::CONTROL_TABLE_MANIPULATOR);
-    //m_climber = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::CLIMBER);
     m_powerCells = BallManipulator::GetInstance();
     m_shooterHood = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::SHOOTER_HOOD);
     m_turret = MechanismFactory::GetMechanismFactory()->GetIMechanism(MechanismTypes::TURRET);
@@ -133,17 +103,6 @@ void Robot::RobotInit()
 
     m_buttonBoxDisplay = nullptr;
     m_xBoxDisplay = nullptr;
-
-    //m_climberState = false;
-    //m_cpmState = false;
-
-    //m_climberSolenoidState = m_climberSolenoid->Get();
-    //m_cpmSolenoidState = m_cpmSolenoid->Get();
-    //m_limelight = LimelightFactory::GetLimelightFactory()->GetLimelight(IDragonSensor::SENSOR_USAGE::MAIN_LIMELIGHT );
-    /*if (m_limelight.get() != nullptr )
-    {
-        m_limelight.get()->SetLEDMode( DragonLimelight::LED_MODE::LED_OFF);
-    } */  
 }
 
 /// @brief This function is called every robot packet, no matter the  mode. This is used for items like diagnostics that run 
@@ -220,79 +179,6 @@ void Robot::TeleopPeriodic()
     frc::SmartDashboard::PutNumber("Shooter Hood position", m_shooterHood->GetCurrentPosition());
     frc::SmartDashboard::PutNumber("Impeller speed", m_impeller->GetCurrentSpeed());*/
     frc::SmartDashboard::PutNumber("Shooter speed", m_shooter->GetCurrentSpeed());
-    //frc::SmartDashboard::PutNumber("Limelight tx", m_limelight.get()->GetTargetHorizontalOffset());
-    /*if(m_controller->IsButtonPressed(TeleopControl::CONTROL_PANEL_SPIN_WHEEL))
-    {
-        m_cpmState = !m_cpmState;
-    }
-
-    
-    if(m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CONTROL_PANEL_RAISE))
-    {
-        m_cpmSolenoidState = true;
-    }
-    else
-    {
-        m_cpmSolenoidState = false;
-    }
-    
-
-    if(m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_LIFT))
-    {
-        m_climberState = !m_climberState;
-    }
-
-
-
-    if(m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::CLIMBER_EXTEND))
-    {
-        m_climberSolenoidState = true;
-    }
-    else
-    {
-        m_climberSolenoidState = false;
-    }
-
-    if(m_cpmState)
-    {
-        m_cpm->Set(ControlMode::PercentOutput, 1.0);
-    }
-    else
-    {
-         m_cpm->Set(ControlMode::PercentOutput, 0.0);
-    }
-
-    if(m_climberState)
-    {
-        m_climber->Set(ControlMode::PercentOutput, 1.0);
-    }
-    else
-    {
-        m_climber->Set(ControlMode::PercentOutput, 0.0);
-    }
-
-    if(m_climberSolenoidState)
-    {
-        m_climberSolenoid->Set(!m_climberSolenoid->Get());
-    }
-    else
-    {
-        
-    }
-
-    if(m_cpmSolenoidState)
-    {
-        m_cpmSolenoid->Set(!m_cpmSolenoid->Get());
-    }
-    {
-
-    }
-    
-
-    
-    
-    frc::SmartDashboard::PutBoolean("left trigger", m_controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::TRANSFER_DOWN));
-    */
 }
 
 

@@ -27,7 +27,7 @@ TestIntake::TestIntake()
 
 void TestIntake::Periodic()
 {
-    auto time = m_timer -> Get();
+    /*auto time = m_timer -> Get();
     if (time < 15.0)
     {
         m_intakeStates -> SetCurrentState( IntakeStateMgr::INTAKE_STATE::ON, true );
@@ -35,6 +35,6 @@ void TestIntake::Periodic()
     else
     {
         m_intakeStates -> SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, true );
-    }
+    }*/
 
 }

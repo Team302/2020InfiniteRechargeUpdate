@@ -110,14 +110,6 @@ class Robot : public frc::TimedRobot
       TalonSRX* m_cpm;
       TalonSRX* m_climber;
 
-      frc::Solenoid* m_cpmSolenoid;
-      frc::Solenoid* m_climberSolenoid;
-
-      bool m_climberState;
-      bool m_climberSolenoidState;
-      bool m_cpmState;
-      bool m_cpmSolenoidState;
-
 
       frc::SendableChooser<std::string>   m_testChooser;                    
       const std::string                   m_noTest = "No Test";      

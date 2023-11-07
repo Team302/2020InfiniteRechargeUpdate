@@ -18,9 +18,9 @@
 
 #include <states/turret/TurretTurnAngle.h>
 #include <states/turret/ManualAim.h>
-#include <states/turret/LimelightAim.h>
+//#include <states/turret/LimelightAim.h>
 #include <states/turret/HoldTurretPosition.h>
-#include <hw/factories/LimelightFactory.h>
+//#include <hw/factories/LimelightFactory.h>
 #include <subsys/MechanismFactory.h>
 #include <subsys/IMechanism.h>
 #include <subsys/MechanismTypes.h>
@@ -81,12 +81,12 @@ TurretStateMgr::TurretStateMgr() : m_stateVector(),
                     }
                     break;
 
-                    case TURRET_STATE::LIMELIGHT_AIM:
-                    {
-                        auto thisState = new LimelightAim(controlData, target);
-                        m_stateVector[stateEnum] = thisState;
-                    }
-                    break;
+                    // case TURRET_STATE::LIMELIGHT_AIM:
+                    // {
+                    //     auto thisState = new LimelightAim(controlData, target);
+                    //     m_stateVector[stateEnum] = thisState;
+                    // }
+                    // break;
 
                     case TURRET_STATE::MANUAL_AIM:
                     {
@@ -160,14 +160,14 @@ void TurretStateMgr::SetCurrentState
         m_currentState = state;
         m_currentStateEnum = stateEnum;
         m_currentState->Init();
-        if ( stateEnum == LIMELIGHT_AIM )
-        {
-            auto llAim = dynamic_cast<LimelightAim*>(m_currentState);
-            if ( llAim != nullptr )
-            {
-                llAim->UpdateTarget( m_approxTargetAngle );
-            }
-        }
+        // if ( stateEnum == LIMELIGHT_AIM )
+        // {
+        //     auto llAim = dynamic_cast<LimelightAim*>(m_currentState);
+        //     if ( llAim != nullptr )
+        //     {
+        //         llAim->UpdateTarget( m_approxTargetAngle );
+        //     }
+        // }
 
         
         if ( run )

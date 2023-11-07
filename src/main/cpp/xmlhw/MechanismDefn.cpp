@@ -51,7 +51,7 @@
 #include <utils/Logger.h>
 
 #include <xmlhw/MechanismDefn.h>
-#include <xmlhw/ColorSensorDefn.h>
+//#include <xmlhw/ColorSensorDefn.h>
 #include <hw/interfaces/IDragonMotorController.h>
 
 // Third Party Includes
@@ -151,7 +151,7 @@ IMechanism* MechanismDefn::ParseXML
     unique_ptr<DigitalInputDefn> digitalXML = make_unique<DigitalInputDefn>();
     unique_ptr<ServoDefn> servoXML = make_unique<ServoDefn>();
     unique_ptr<SolenoidDefn> solenoidXML = make_unique<SolenoidDefn>();
-    unique_ptr<ColorSensorDefn> colorXML = make_unique<ColorSensorDefn>();
+    //unique_ptr<ColorSensorDefn> colorXML = make_unique<ColorSensorDefn>();
     unique_ptr<CanCoderDefn> cancoderXML = make_unique<CanCoderDefn>();
 
     IDragonMotorControllerMap motors;
@@ -207,10 +207,6 @@ IMechanism* MechanismDefn::ParseXML
         else if ( strcmp( child.name(), "canCoder" ) == 0)
         {
             canCoder = cancoderXML.get()->ParseXML(child);
-        }
-        else if ( strcmp( child.name(), "colorsensor" ) == 0 )
-        {
-            colorSensor = colorXML.get()->ParseXML(child);
         }
         else
         {

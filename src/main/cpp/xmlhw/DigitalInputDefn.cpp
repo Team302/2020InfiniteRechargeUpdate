@@ -13,8 +13,8 @@
 
 // C++ includes
 #include <iostream>
-#include <string>
 #include <memory>
+#include <cstring>
 
 // FRC includes
 #include <frc/SmartDashboard/SmartDashboard.h>
