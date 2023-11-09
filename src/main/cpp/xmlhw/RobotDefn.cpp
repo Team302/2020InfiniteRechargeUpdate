@@ -52,6 +52,7 @@
 // Third Party Includes
 #include <pugixml/pugixml.hpp>
 
+
 using namespace frc;
 using namespace pugi;
 using namespace std;
@@ -99,7 +100,7 @@ void RobotDefn::ParseXML()
                 }
                 else if (strcmp(child.name(), "camera") == 0)
                 {
-                    cameraXML.get()->ParseXML(child);
+                    
                 }
                 else if ( strcmp(child.name(), "odometry") == 0 )
                 {
