@@ -66,7 +66,7 @@ using namespace std;
 void RobotDefn::ParseXML()
 {
     // set the file to parse
-    const char *filename = "/home/lvuser/config/robot.xml";
+    const char *filename = "/home/lvuser/deploy/robot.xml";
 
     // load the xml file into memory (parse it)
     xml_document doc;
