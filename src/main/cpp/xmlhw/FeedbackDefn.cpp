@@ -85,7 +85,7 @@ void FeedbackDefn::ParseXML
     // Process child element nodes
     for (xml_node child = FeedbackNode.first_child(); child; child = child.next_sibling())
     {
-        if (strcmp(child.name(), "camera") == 0)
+        /*if (strcmp(child.name(), "camera") == 0)
         {
             if ( cameraXML != nullptr )
             {
@@ -95,8 +95,8 @@ void FeedbackDefn::ParseXML
             {
                 Logger::GetLogger()->LogError( string("OdometryDefn::ParseXML"), string("Unable to create CameeraDefn") );
             }
-        }
-        else if (strcmp(child.name(), "led") == 0)
+        }*/
+        if (strcmp(child.name(), "led") == 0)
         {
             if ( ledXML != nullptr )
             {
