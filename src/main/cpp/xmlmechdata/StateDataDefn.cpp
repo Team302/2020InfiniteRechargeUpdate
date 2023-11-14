@@ -66,7 +66,7 @@ vector<MechanismTargetData*> StateDataDefn::ParseXML
     vector<MechanismTargetData*> targetDataVector;
 
     // set the file to parse
-    string filename = "/home/lvuser/config/states/";
+    string filename = "/home/lvuser/deploy/states/";
     switch ( mechanism )
     {
         case MechanismTypes::DRIVETRAIN_SIDE:
