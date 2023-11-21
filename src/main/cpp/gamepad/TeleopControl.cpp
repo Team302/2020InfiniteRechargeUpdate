@@ -91,28 +91,50 @@ TeleopControl::TeleopControl() : m_axisIDs(),
     auto ctrlNo = 0;
     if ( m_controllers[ctrlNo] != nullptr && DriverStation::GetJoystickIsXbox(ctrlNo) )
     {
-		m_controllerIndex[ TANK_DRIVE_LEFT_CONTROL ] 	= ctrlNo;
-		m_axisIDs[ TANK_DRIVE_LEFT_CONTROL ]    		= IDragonGamePad::LEFT_JOYSTICK_Y;
-		m_controllerIndex[ TANK_DRIVE_RIGHT_CONTROL ] 	= ctrlNo;
-		m_axisIDs[ TANK_DRIVE_RIGHT_CONTROL ]   		= IDragonGamePad::RIGHT_JOYSTICK_Y;
 
 		m_controllerIndex[ ARCADE_DRIVE_THROTTLE ] 		= ctrlNo;
 		m_axisIDs[ ARCADE_DRIVE_THROTTLE ]      		= IDragonGamePad::LEFT_JOYSTICK_Y;
 		m_controllerIndex[ ARCADE_DRIVE_STEER ] 		= ctrlNo;
 		m_axisIDs[ ARCADE_DRIVE_STEER ]         		= IDragonGamePad::RIGHT_JOYSTICK_X;
 
-		m_controllerIndex[ GTA_DRIVE_FORWARD ] 		    = ctrlNo;
-		m_axisIDs[ GTA_DRIVE_FORWARD ]      		    = IDragonGamePad::RIGHT_TRIGGER;
-		m_controllerIndex[ GTA_DRIVE_BACKWARD ] 		= ctrlNo;
-		m_axisIDs[ GTA_DRIVE_BACKWARD ]         		= IDragonGamePad::LEFT_TRIGGER;
-		m_controllerIndex[ GTA_DRIVE_STEER ] 		    = ctrlNo;
-		m_axisIDs[ GTA_DRIVE_STEER ]         		    = IDragonGamePad::LEFT_JOYSTICK_X;
-
 		m_controllerIndex[ CURVATURE_DRIVE_QUICK_TURN ]	= ctrlNo;
 		m_buttonIDs[ CURVATURE_DRIVE_QUICK_TURN ]		= IDragonGamePad::RIGHT_BUMPER;
 
-		m_controllerIndex[ SWITCH_DRIVE_MODE ]          = ctrlNo;
-		m_buttonIDs[ SWITCH_DRIVE_MODE ]                = IDragonGamePad::A_BUTTON;
+		m_controllerIndex[ TURRET_MANUAL_AXIS] = ctrlNo;
+		m_axisIDs[ TURRET_MANUAL_AXIS] = IDragonGamePad::LEFT_JOYSTICK_X;
+
+		m_controllerIndex[ OFF ] = ctrlNo;
+		m_buttonIDs[ OFF ] = IDragonGamePad::START_BUTTON;
+
+		m_controllerIndex[ INTAKE ] = ctrlNo;
+		m_buttonIDs[ INTAKE ] = IDragonGamePad::A_BUTTON;
+
+		m_controllerIndex[ INTAKE_HUMAN_PLAYER] = ctrlNo;
+		m_buttonIDs[ INTAKE_HUMAN_PLAYER ] = IDragonGamePad::B_BUTTON;
+
+		m_controllerIndex[ SHOOT ] = ctrlNo;
+		m_buttonIDs[ SHOOT ] = IDragonGamePad::X_BUTTON;
+		
+		m_controllerIndex[ TURRET_MANUAL_BUTTON] = ctrlNo;
+		m_buttonIDs[ TURRET_MANUAL_BUTTON] = IDragonGamePad::Y_BUTTON;
+
+		m_controllerIndex[SHOOTER_MANUAL_SHOOT] = ctrlNo;
+		m_buttonIDs[SHOOTER_MANUAL_SHOOT] = IDragonGamePad::POV_0;
+		
+		m_controllerIndex[SHOOTER_OFF] = ctrlNo;
+		m_buttonIDs[SHOOTER_OFF] = IDragonGamePad::POV_180;
+
+		m_controllerIndex[ UNJAM_CLOCKWISE ] = ctrlNo;
+		m_buttonIDs[ UNJAM_CLOCKWISE ] = IDragonGamePad::RIGHT_BUMPER;
+		
+		m_controllerIndex[ UNJAM_COUNTERCLOCKWISE ] = ctrlNo;
+		m_buttonIDs[ UNJAM_COUNTERCLOCKWISE ] = IDragonGamePad::LEFT_BUMPER;
+
+		m_controllerIndex[ TRANSFER_UP ] = ctrlNo;
+		m_buttonIDs[ TRANSFER_UP ] = IDragonGamePad::LEFT_TRIGGER_PRESSED;
+
+		m_controllerIndex[ TRANSFER_DOWN ] = ctrlNo;
+		m_buttonIDs[ TRANSFER_DOWN ] = IDragonGamePad::RIGHT_TRIGGER_PRESSED;
 
     }
     else
