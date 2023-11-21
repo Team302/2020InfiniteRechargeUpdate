@@ -113,6 +113,7 @@ void BallManipulator::RunCurrentState()
     
     //SetCurrentState(m_currentState);
            // run the current state
+
     m_intake->RunCurrentState();
     m_impeller->RunCurrentState();
     m_transfer->RunCurrentState();
@@ -233,7 +234,7 @@ void BallManipulator::SetCurrentState
         default:
             break;
     }
-    RunCurrentState();
+    //RunCurrentState();
 
 }
 
