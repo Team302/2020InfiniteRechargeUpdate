@@ -120,7 +120,7 @@ double ArcadeDrive::GetThrottle()
 double ArcadeDrive::GetSteer()
 {
     auto controller = GetController();
-    return ( ( controller != nullptr ) ? controller->GetAxisValue( TeleopControl::FUNCTION_IDENTIFIER::ARCADE_DRIVE_STEER) : 0.0 );
+    return  (( controller != nullptr ) ? controller->GetAxisValue( TeleopControl::FUNCTION_IDENTIFIER::ARCADE_DRIVE_STEER) : 0.0)*.25;
 }
 
 /// @brief calculate the normal output values for the wheels on the chassis from the throttle and steer components
@@ -222,7 +222,7 @@ void ArcadeDrive::CurvatureDrive
 		}
 	}
 
-    // make sure the values are within -1.0 to 1.0
+    //make sure the values are within -1.0 to 1.0
     auto maxValue = max(abs( *left ), abs( *right ) );
     if ( maxValue > 1.0 )
     {

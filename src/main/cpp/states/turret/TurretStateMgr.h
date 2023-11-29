@@ -60,5 +60,7 @@ class TurretStateMgr {
         ~TurretStateMgr() = default;
 
         static TurretStateMgr*	m_instance;
+        bool m_latch;
+        bool m_hatch;
 
 };

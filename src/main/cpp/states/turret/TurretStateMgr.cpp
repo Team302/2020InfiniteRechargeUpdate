@@ -55,6 +55,9 @@ TurretStateMgr::TurretStateMgr() : m_stateVector(),
     stateMap["TURRETTURNANGLE"] = TURRET_STATE::TURN_ANGLE;
     m_stateVector.resize(4);
 
+    m_latch = true;
+    m_hatch = false;
+
     for ( auto td: targetData )
     {
         auto stateString = td->GetStateString();
@@ -124,14 +127,29 @@ void TurretStateMgr::RunCurrentState()
         auto controller = TeleopControl::GetInstance();
         if ( controller != nullptr )
         {
-            if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_BUTTON))
+            if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_BUTTON)&& m_latch && !m_hatch)
             {
-                SetCurrentState( TURRET_STATE::MANUAL_AIM, false , 0.0); 
+                SetCurrentState(TURRET_STATE::MANUAL_AIM, false, 0.0);
+                m_latch = false;
+                m_hatch = true;
             }
-            if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::TURRET_LIMELIGHT_AIM))
+
+            else if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_BUTTON)&& m_latch && m_hatch)
             {
-                SetCurrentState( TURRET_STATE::LIMELIGHT_AIM, false, 0.0);
+                SetCurrentState(TURRET_STATE::HOLD, false, 0.0);
+                m_latch = false;
+                m_hatch = false;
             }
+
+            else if (!controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_BUTTON))
+            {
+                m_latch = true;
+            }
+
+            // if (controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::TURRET_LIMELIGHT_AIM))
+            // {
+            //     SetCurrentState( TURRET_STATE::LIMELIGHT_AIM, false, 0.0);
+            // }
         }
         Logger::GetLogger()->OnDash(string("Turret State"), to_string(m_currentStateEnum));
         if ( m_currentState != nullptr )
