@@ -97,9 +97,6 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_controllerIndex[ ARCADE_DRIVE_STEER ] 		= ctrlNo;
 		m_axisIDs[ ARCADE_DRIVE_STEER ]         		= IDragonGamePad::RIGHT_JOYSTICK_X;
 
-		m_controllerIndex[ CURVATURE_DRIVE_QUICK_TURN ]	= ctrlNo;
-		m_buttonIDs[ CURVATURE_DRIVE_QUICK_TURN ]		= IDragonGamePad::RIGHT_BUMPER;
-
 		m_controllerIndex[ TURRET_MANUAL_AXIS] = ctrlNo;
 		m_axisIDs[ TURRET_MANUAL_AXIS] = IDragonGamePad::LEFT_JOYSTICK_X;
 
@@ -165,9 +162,6 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		
 		m_controllerIndex[ TURRET_MANUAL_BUTTON] = ctrlNo;
 		m_buttonIDs[ TURRET_MANUAL_BUTTON] = IDragonGamePad::Y_BUTTON;
-
-		m_controllerIndex[ SHOOTER_HOOD_MANUAL_BUTTON] = ctrlNo;
-		m_buttonIDs[ SHOOTER_HOOD_MANUAL_BUTTON] = IDragonGamePad::Y_BUTTON;
 
 		m_controllerIndex[SHOOTER_MANUAL_SHOOT] = ctrlNo;
 		m_buttonIDs[SHOOTER_MANUAL_SHOOT] = IDragonGamePad::POV_0;
