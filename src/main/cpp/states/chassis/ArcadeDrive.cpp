@@ -93,8 +93,8 @@ void ArcadeDrive::Run( )
 	{
 		NormalDrive( throttle, steer, &left, &right );
 	}
-
-
+//adjustment for veering
+left *= 1.035;
     // Set the percentages
     m_chassis.get()->SetOutput( ControlModes::PERCENT_OUTPUT, left, right );
 }
@@ -120,7 +120,7 @@ double ArcadeDrive::GetThrottle()
 double ArcadeDrive::GetSteer()
 {
     auto controller = GetController();
-    return  (( controller != nullptr ) ? controller->GetAxisValue( TeleopControl::FUNCTION_IDENTIFIER::ARCADE_DRIVE_STEER) : 0.0)*.25;
+    return  (( controller != nullptr ) ? controller->GetAxisValue( TeleopControl::FUNCTION_IDENTIFIER::ARCADE_DRIVE_STEER) : 0.0)*.175;
 }
 
 /// @brief calculate the normal output values for the wheels on the chassis from the throttle and steer components
@@ -229,7 +229,6 @@ void ArcadeDrive::CurvatureDrive
         *left /= maxValue;
         *right /= maxValue;
     }  
-
 }
 
 
