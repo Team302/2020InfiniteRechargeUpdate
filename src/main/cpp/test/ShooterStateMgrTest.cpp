@@ -67,13 +67,13 @@ void ShooterStateMgrTest::Periodic()
 		}
 		else if ( !m_ranShoot )
 		{
-			m_stateMgr->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::SHOOT, false );
+			m_stateMgr->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::MED, false );
 			m_ranShoot = true;
 		}
 		else if ( !m_ranOff )
 		{
-			m_stateMgr->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
 			m_ranOff = true;
+			m_stateMgr->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
 		}
 		else
 		{

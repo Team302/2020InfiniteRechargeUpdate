@@ -48,7 +48,6 @@ ArcadeDrive::ArcadeDrive() : IState(),
     {
         Logger::GetLogger()->LogError( string( "ArcadeDrive::ArcadeDrive"), string("Chassis is nullptr"));
     }
-
 }
 
 /// @brief toggle between curvature and normal modes

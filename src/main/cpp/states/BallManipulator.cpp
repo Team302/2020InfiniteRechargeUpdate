@@ -139,7 +139,7 @@ void BallManipulator::SetCurrentState
             m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
             m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::OFF, false );
             //m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, false , 0.0);
-            //m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
+            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::OFF, false );
             //m_hood->SetCurrentState( ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION, false );
             break;
 
@@ -168,18 +168,42 @@ void BallManipulator::SetCurrentState
             m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
             m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::OFF, false );
             m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::LIMELIGHT_AIM, false, 0.0 );
-            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::SHOOT, false );
+            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::MED, false );
             m_hood->SetCurrentState( ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION, false );  // todo auto aim is needed
             break;
+
+        case BALL_MANIPULATOR_STATE::SHOOTER_LOW:
+            m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::TO_SHOOTER, false );
+            m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_SHOOTER, false );
+            m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, false,0.0 );
+            m_hood->SetCurrentState( ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION, false );  // todo auto aim is needed
+            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::LOW, false );
+        break;
+
+        case BALL_MANIPULATOR_STATE::SHOOTER_MED:
+            m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::TO_SHOOTER, false );
+            m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_SHOOTER, false );
+            m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, false,0.0 );
+            m_hood->SetCurrentState( ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION, false );  // todo auto aim is needed
+            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::MED, false );
+        break;
+
+        case BALL_MANIPULATOR_STATE::SHOOTER_BALLMAXING:
+            m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::TO_SHOOTER, false );
+            m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_SHOOTER, false );
+            m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, false,0.0 );
+            m_hood->SetCurrentState( ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION, false );  // todo auto aim is needed
+            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::BALLMAXXING, false );
+        break;
 
         case BALL_MANIPULATOR_STATE::SHOOT:
             m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::TO_SHOOTER, false );
             m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_SHOOTER, false );
             m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, false,0.0 );
-            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::SHOOT, false );
             m_hood->SetCurrentState( ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION, false );  // todo auto aim is needed
+            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::LOW, false );
             break;
-        
+
         case BALL_MANIPULATOR_STATE::UNJAM_CLOCKWISE:
             //m_intake->SetCurrentState( IntakeStateMgr::INTAKE_STATE::OFF, false );
             m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::TO_SHOOTER, false );
@@ -202,7 +226,7 @@ void BallManipulator::SetCurrentState
             m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::TO_SHOOTER, false );
             m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_SHOOTER, false );
             m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, false,0.0 );
-            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::SHOOT, false );
+            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::MED, false );
             m_hood->SetCurrentState( ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION, false );  
             break;// todo auto aim is needed
         
@@ -228,7 +252,7 @@ void BallManipulator::SetCurrentState
             m_impeller->SetCurrentState( ImpellerStateMgr::IMPELLER_STATE::OFF, false );
             m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::OFF, false );
             m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::TURN_ANGLE, false , turretAngle);
-            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::SHOOT, false );
+            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::LOW, false );
             m_hood->SetCurrentState( ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION, false );
             break;
         default:
