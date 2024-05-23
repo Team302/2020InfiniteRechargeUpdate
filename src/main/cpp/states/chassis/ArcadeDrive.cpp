@@ -72,12 +72,16 @@ void ArcadeDrive::Init()
         controller->SetAxisProfile( TeleopControl::FUNCTION_IDENTIFIER::ARCADE_DRIVE_THROTTLE, IDragonGamePad::AXIS_PROFILE::CUBED );
         controller->SetAxisProfile( TeleopControl::FUNCTION_IDENTIFIER::ARCADE_DRIVE_STEER, IDragonGamePad::AXIS_PROFILE::CUBED );
     }
+	m_disableDrive = false;
+	m_latch = true;
+	m_hatch = false;
 }
 
 /// @brief calculate the output for the wheels on the chassis from the throttle and steer components
 /// @return void
 void ArcadeDrive::Run( )
 {
+	auto tele = TeleopControl::GetInstance();
     // Get throttle and steer values
     auto throttle = GetThrottle();
     auto steer = GetSteer();
@@ -92,6 +96,27 @@ void ArcadeDrive::Run( )
 	{
 		NormalDrive( throttle, steer, &left, &right );
 	}
+	if (tele->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_BUTTON)&& m_latch && !m_hatch)
+    {
+		m_disableDrive = true;
+		m_latch = false;
+		m_hatch = true;
+	}
+	else if (tele->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_BUTTON) && m_latch && m_hatch)
+	{
+		m_disableDrive = false;
+		m_latch = false;
+		m_hatch = false;
+	}
+	else if (!tele->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::TURRET_MANUAL_BUTTON))
+	{
+		m_latch = true;
+	}
+if(m_disableDrive)
+{
+	right = 0.0;
+	left = 0.0;
+}
 //adjustment for veering
 left *= 1.035;
     // Set the percentages

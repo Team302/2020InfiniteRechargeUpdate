@@ -104,6 +104,9 @@ class ArcadeDrive : public IState
         std::shared_ptr<IChassis> m_chassis;
         TeleopControl* m_controller;
 		bool m_curvatureBased;
+		bool m_latch;
+		bool m_hatch;
+		bool m_disableDrive;
 		const double m_quickStopThreshold = 0.2;
 		double m_quickStopAccumulator;
 		double m_quickStopAlpha;

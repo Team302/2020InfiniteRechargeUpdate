@@ -21,6 +21,6 @@
 					 value="16.50"/>
 	<mechanismTarget stateIdentifier="SHOOTERBALLMAXXING"
 					 controlDataIdentifier="closedloop"
-					 value="50.0"/>
+					 value="120.0"/>
 
 </statedata>
