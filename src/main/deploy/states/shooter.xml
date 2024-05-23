@@ -13,8 +13,14 @@
 	<mechanismTarget stateIdentifier="SHOOTERGETREADY"
 	                 controlDataIdentifier="openloop"
 					 value="0.5"/>
-	<mechanismTarget stateIdentifier="SHOOTERSHOOT"
+	<mechanismTarget stateIdentifier="SHOOTERMED"
 	                 controlDataIdentifier="closedloop"
 					 value="36.50"/>
+	<mechanismTarget stateIdentifier="SHOOTERLOW"
+					 controlDataIdentifier="closedloop"
+					 value="16.50"/>
+	<mechanismTarget stateIdentifier="SHOOTERBALLMAXXING"
+					 controlDataIdentifier="closedloop"
+					 value="120.0"/>
 
 </statedata>

@@ -34,6 +34,10 @@ class ShooterStateMgr
         {
             OFF,
             GET_READY,
+            MED,
+            LOW,
+            //clarie named this
+            BALLMAXXING,
             SHOOT,
             MAX_SHOOTER_STATES
         };

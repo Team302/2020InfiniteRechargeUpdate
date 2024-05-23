@@ -96,40 +96,37 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_axisIDs[ ARCADE_DRIVE_THROTTLE ]      		= IDragonGamePad::LEFT_JOYSTICK_Y;
 		m_controllerIndex[ ARCADE_DRIVE_STEER ] 		= ctrlNo;
 		m_axisIDs[ ARCADE_DRIVE_STEER ]         		= IDragonGamePad::RIGHT_JOYSTICK_X;
-
-		m_controllerIndex[ TURRET_MANUAL_AXIS] = ctrlNo;
-		m_axisIDs[ TURRET_MANUAL_AXIS] = IDragonGamePad::LEFT_JOYSTICK_X;
+		m_controllerIndex[ TURRET_MANUAL_AXIS] 			= ctrlNo;
+		m_axisIDs[ TURRET_MANUAL_AXIS] 					= IDragonGamePad::LEFT_JOYSTICK_X;
 
 		m_controllerIndex[ OFF ] = ctrlNo;
 		m_buttonIDs[ OFF ] = IDragonGamePad::START_BUTTON;
 
 		m_controllerIndex[ INTAKE ] = ctrlNo;
 		m_buttonIDs[ INTAKE ] = IDragonGamePad::A_BUTTON;
-
-		m_controllerIndex[ INTAKE_HUMAN_PLAYER] = ctrlNo;
-		m_buttonIDs[ INTAKE_HUMAN_PLAYER ] = IDragonGamePad::B_BUTTON;
-
+		m_controllerIndex[ IMPELLER_OFF] = ctrlNo;
+		m_buttonIDs[ IMPELLER_OFF] = IDragonGamePad::B_BUTTON;
 		m_controllerIndex[ SHOOT ] = ctrlNo;
 		m_buttonIDs[ SHOOT ] = IDragonGamePad::X_BUTTON;
-		
 		m_controllerIndex[ TURRET_MANUAL_BUTTON] = ctrlNo;
 		m_buttonIDs[ TURRET_MANUAL_BUTTON] = IDragonGamePad::Y_BUTTON;
 
-		m_controllerIndex[SHOOTER_MANUAL_SHOOT] = ctrlNo;
-		m_buttonIDs[SHOOTER_MANUAL_SHOOT] = IDragonGamePad::POV_0;
-		
+		m_controllerIndex[SHOOTER_MANUAL_LOW] = ctrlNo;
+		m_buttonIDs[SHOOTER_MANUAL_LOW] = IDragonGamePad::POV_270;
+		m_controllerIndex[SHOOTER_MANUAL_MED] = ctrlNo;
+		m_buttonIDs[SHOOTER_MANUAL_MED] = IDragonGamePad::POV_0;
+		m_controllerIndex[SHOOTER_MANUAL_BALLMAXXING] = ctrlNo;
+		m_buttonIDs[SHOOTER_MANUAL_BALLMAXXING] = IDragonGamePad::POV_90;
 		m_controllerIndex[SHOOTER_OFF] = ctrlNo;
 		m_buttonIDs[SHOOTER_OFF] = IDragonGamePad::POV_180;
 
 		m_controllerIndex[ UNJAM_CLOCKWISE ] = ctrlNo;
 		m_buttonIDs[ UNJAM_CLOCKWISE ] = IDragonGamePad::RIGHT_BUMPER;
-		
 		m_controllerIndex[ UNJAM_COUNTERCLOCKWISE ] = ctrlNo;
 		m_buttonIDs[ UNJAM_COUNTERCLOCKWISE ] = IDragonGamePad::LEFT_BUMPER;
 
 		m_controllerIndex[ TRANSFER_UP ] = ctrlNo;
 		m_buttonIDs[ TRANSFER_UP ] = IDragonGamePad::LEFT_TRIGGER_PRESSED;
-
 		m_controllerIndex[ TRANSFER_DOWN ] = ctrlNo;
 		m_buttonIDs[ TRANSFER_DOWN ] = IDragonGamePad::RIGHT_TRIGGER_PRESSED;
 
@@ -163,8 +160,8 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_controllerIndex[ TURRET_MANUAL_BUTTON] = ctrlNo;
 		m_buttonIDs[ TURRET_MANUAL_BUTTON] = IDragonGamePad::Y_BUTTON;
 
-		m_controllerIndex[SHOOTER_MANUAL_SHOOT] = ctrlNo;
-		m_buttonIDs[SHOOTER_MANUAL_SHOOT] = IDragonGamePad::POV_0;
+		m_controllerIndex[SHOOTER_MANUAL_MED] = ctrlNo;
+		m_buttonIDs[SHOOTER_MANUAL_MED] = IDragonGamePad::POV_0;
 		
 		m_controllerIndex[SHOOTER_OFF] = ctrlNo;
 		m_buttonIDs[SHOOTER_OFF] = IDragonGamePad::POV_180;

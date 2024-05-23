@@ -65,6 +65,9 @@ PrimitiveParamsVector PrimitiveParser::ParseXML
 
     map<string, BallManipulator::BALL_MANIPULATOR_STATE> ballStringToEnumMap;
     ballStringToEnumMap["OFF"] = BallManipulator::BALL_MANIPULATOR_STATE::OFF;
+    ballStringToEnumMap["SHOOTERLOW"] = BallManipulator::BALL_MANIPULATOR_STATE::SHOOTER_LOW;
+    ballStringToEnumMap["SHOOTERMED"] = BallManipulator::BALL_MANIPULATOR_STATE::SHOOTER_MED;
+    ballStringToEnumMap["SHOOTERBALLMAXXING"] = BallManipulator::BALL_MANIPULATOR_STATE::SHOOTER_BALLMAXING;
     ballStringToEnumMap["INTAKE"]  = BallManipulator::BALL_MANIPULATOR_STATE::INTAKE;
     ballStringToEnumMap["INTAKE_HUMAN_PLAYER"] = BallManipulator::BALL_MANIPULATOR_STATE::INTAKE_HUMAN_PLAYER;
     ballStringToEnumMap["HOLD"] = BallManipulator::BALL_MANIPULATOR_STATE::HOLD;

@@ -37,6 +37,9 @@ class BallManipulator
         enum BALL_MANIPULATOR_STATE
         {
             OFF,
+            SHOOTER_LOW,
+            SHOOTER_MED,
+            SHOOTER_BALLMAXING,
             INTAKE,
             INTAKE_HUMAN_PLAYER,
             HOLD,

@@ -58,8 +58,11 @@ ShooterStateMgr::ShooterStateMgr() : m_stateVector(),
     map<string, SHOOTER_STATE> stateStringToEnumMap;
     stateStringToEnumMap["SHOOTEROFF"] = SHOOTER_STATE::OFF;
     stateStringToEnumMap["SHOOTERGETREADY"]  = SHOOTER_STATE::GET_READY;
-    stateStringToEnumMap["SHOOTERSHOOT"] = SHOOTER_STATE::SHOOT;
-    m_stateVector.resize(3);
+    stateStringToEnumMap["SHOOTERMED"] = SHOOTER_STATE::MED;
+    stateStringToEnumMap["SHOOTERLOW"] = SHOOTER_STATE::LOW;
+    stateStringToEnumMap["SHOOTERBALLMAXXING"] = SHOOTER_STATE::BALLMAXXING;
+
+    m_stateVector.resize(5);
 
     // create the states passing the configuration data
     for ( auto td: targetData )
@@ -96,6 +99,26 @@ ShooterStateMgr::ShooterStateMgr() : m_stateVector(),
                     }
                     break;
 
+                    case SHOOTER_STATE::MED:
+                    {   
+                        auto thisState = new ShooterState( controlData, target, fbControlData, fbTarget, solState );
+                        m_stateVector[stateEnum] = thisState;
+                    }
+                    break;
+
+                    case SHOOTER_STATE::LOW:
+                    {   
+                        auto thisState = new ShooterState( controlData, target, fbControlData, fbTarget, solState );
+                        m_stateVector[stateEnum] = thisState;
+                    }
+                    break;
+
+                    case SHOOTER_STATE::BALLMAXXING:
+                    {   
+                        auto thisState = new ShooterState( controlData, target, fbControlData, fbTarget, solState );
+                        m_stateVector[stateEnum] = thisState;
+                    }
+                    break;
                     case SHOOTER_STATE::SHOOT:
                     {   
                         auto thisState = new ShooterState( controlData, target, fbControlData, fbTarget, solState );
@@ -136,9 +159,17 @@ void ShooterStateMgr::RunCurrentState()
             {
                 SetCurrentState( SHOOTER_STATE::GET_READY, false );
             }
-            if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_MANUAL_SHOOT ))
+            if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_MANUAL_MED ))
             {
-                SetCurrentState( SHOOTER_STATE::SHOOT, false );
+                SetCurrentState( SHOOTER_STATE::MED, false );
+            }
+            if(controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_MANUAL_LOW))
+            {
+                SetCurrentState( SHOOTER_STATE::LOW, false);
+            }
+            if(controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_MANUAL_BALLMAXXING))
+            {
+                SetCurrentState( SHOOTER_STATE::BALLMAXXING, false);
             }
             if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_OFF ))
             {
