@@ -115,8 +115,8 @@ TeleopControl::TeleopControl() : m_axisIDs(),
 		m_buttonIDs[SHOOTER_MANUAL_LOW] = IDragonGamePad::POV_270;
 		m_controllerIndex[SHOOTER_MANUAL_MED] = ctrlNo;
 		m_buttonIDs[SHOOTER_MANUAL_MED] = IDragonGamePad::POV_0;
-		m_controllerIndex[SHOOTER_MANUAL_BALLMAXXING] = ctrlNo;
-		m_buttonIDs[SHOOTER_MANUAL_BALLMAXXING] = IDragonGamePad::POV_90;
+		m_controllerIndex[SHOOTER_MANUAL_MAX] = ctrlNo;
+		m_buttonIDs[SHOOTER_MANUAL_MAX] = IDragonGamePad::POV_90;
 		m_controllerIndex[SHOOTER_OFF] = ctrlNo;
 		m_buttonIDs[SHOOTER_OFF] = IDragonGamePad::POV_180;
 

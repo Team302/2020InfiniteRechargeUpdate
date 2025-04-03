@@ -193,7 +193,7 @@ void BallManipulator::SetCurrentState
             m_transfer->SetCurrentState( BallTransferStateMgr::BALL_TRANSFER_STATE::TO_SHOOTER, false );
             m_turret->SetCurrentState( TurretStateMgr::TURRET_STATE::HOLD, false,0.0 );
             m_hood->SetCurrentState( ShooterHoodStateMgr::SHOOTER_HOOD_STATE::HOLD_POSITION, false );  // todo auto aim is needed
-            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::BALLMAXXING, false );
+            m_shooter->SetCurrentState( ShooterStateMgr::SHOOTER_STATE::MAX, false );
         break;
 
         case BALL_MANIPULATOR_STATE::SHOOT:

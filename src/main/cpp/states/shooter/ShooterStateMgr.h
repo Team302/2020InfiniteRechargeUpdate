@@ -37,7 +37,7 @@ class ShooterStateMgr
             MED,
             LOW,
             //clarie named this
-            BALLMAXXING,
+            MAX,
             SHOOT,
             MAX_SHOOTER_STATES
         };

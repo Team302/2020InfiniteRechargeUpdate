@@ -19,7 +19,7 @@
 	<mechanismTarget stateIdentifier="SHOOTERLOW"
 					 controlDataIdentifier="closedloop"
 					 value="16.50"/>
-	<mechanismTarget stateIdentifier="SHOOTERBALLMAXXING"
+	<mechanismTarget stateIdentifier="SHOOTERMAX"
 					 controlDataIdentifier="closedloop"
 					 value="120.0"/>
 

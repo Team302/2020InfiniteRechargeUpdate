@@ -60,7 +60,7 @@ ShooterStateMgr::ShooterStateMgr() : m_stateVector(),
     stateStringToEnumMap["SHOOTERGETREADY"]  = SHOOTER_STATE::GET_READY;
     stateStringToEnumMap["SHOOTERMED"] = SHOOTER_STATE::MED;
     stateStringToEnumMap["SHOOTERLOW"] = SHOOTER_STATE::LOW;
-    stateStringToEnumMap["SHOOTERBALLMAXXING"] = SHOOTER_STATE::BALLMAXXING;
+    stateStringToEnumMap["SHOOTERMAX"] = SHOOTER_STATE::MAX;
 
     m_stateVector.resize(5);
 
@@ -113,7 +113,7 @@ ShooterStateMgr::ShooterStateMgr() : m_stateVector(),
                     }
                     break;
 
-                    case SHOOTER_STATE::BALLMAXXING:
+                    case SHOOTER_STATE::MAX:
                     {   
                         auto thisState = new ShooterState( controlData, target, fbControlData, fbTarget, solState );
                         m_stateVector[stateEnum] = thisState;
@@ -167,9 +167,9 @@ void ShooterStateMgr::RunCurrentState()
             {
                 SetCurrentState( SHOOTER_STATE::LOW, false);
             }
-            if(controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_MANUAL_BALLMAXXING))
+            if(controller->IsButtonPressed(TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_MANUAL_MAX))
             {
-                SetCurrentState( SHOOTER_STATE::BALLMAXXING, false);
+                SetCurrentState( SHOOTER_STATE::MAX, false);
             }
             if ( controller->IsButtonPressed( TeleopControl::FUNCTION_IDENTIFIER::SHOOTER_OFF ))
             {

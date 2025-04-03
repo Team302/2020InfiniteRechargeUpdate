@@ -66,7 +66,7 @@ class TeleopControl
             SHOOTER_MANUAL_ADJUST_DISTANCE,
             SHOOTER_MANUAL_MED,
             SHOOTER_MANUAL_LOW,
-            SHOOTER_MANUAL_BALLMAXXING,
+            SHOOTER_MANUAL_MAX,
             SHOOTER_OFF,
             CONTROL_PANEL_STOW,
             CONTROL_PANEL_RAISE,
