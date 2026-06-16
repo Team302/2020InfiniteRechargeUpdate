@@ -21,7 +21,6 @@
 // FRC includes
 #include <frc/smartdashboard/SmartDashboard.h>
 #include <frc/smartdashboard/SendableChooser.h>
-#include <cameraserver/CameraServer.h>
 
 // Team 302 Includes
 #include <Robot.h>
@@ -104,8 +103,6 @@ void Robot::RobotInit()
 
     m_buttonBoxDisplay = nullptr;
     m_xBoxDisplay = nullptr;
-
-    frc::CameraServer::StartAutomaticCapture();
 }
 
 /// @brief This function is called every robot packet, no matter the  mode. This is used for items like diagnostics that run 
