@@ -21,7 +21,6 @@
 // FRC includes
 #include <frc/smartdashboard/SmartDashboard.h>
 #include <frc/smartdashboard/SendableChooser.h>
-#include <cameraserver/CameraServer.h>
 
 // Team 302 Includes
 #include <Robot.h>
