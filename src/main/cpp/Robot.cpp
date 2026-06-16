@@ -104,8 +104,6 @@ void Robot::RobotInit()
 
     m_buttonBoxDisplay = nullptr;
     m_xBoxDisplay = nullptr;
-
-    frc::CameraServer::StartAutomaticCapture();
 }
 
 /// @brief This function is called every robot packet, no matter the  mode. This is used for items like diagnostics that run 
